@@ -1,0 +1,100 @@
+public class Lamp {
+ private String type;
+ private String type_of_bulb;
+ private String material;
+ private int light_color;
+ private int capacity;
+ 
+ private static int number_of_lamps=0;
+ 
+ public String getType() {
+  return type;
+ }
+ public void setType(String type) {
+  this.type = type;
+ }
+ 
+ public String getType_of_bulb() {
+  return type_of_bulb;
+ }
+ public void setType_of_bulb(String type_of_bulb) {
+  this.type_of_bulb = type_of_bulb;
+ }
+ 
+ public String getMaterial() {
+  return material;
+ }
+ public void setMaterial(String material) {
+  this.material = material;
+ }
+ 
+ public int getLight_color() {
+  return light_color;
+ }
+ public void setLight_color(int light_color) {
+  this.light_color = light_color;
+ }
+ 
+ public int getCapacity() {
+  return capacity;
+ }
+ public void setCapacity(int capacity) {
+  this.capacity = capacity;
+ }
+ 
+ public Lamp() {
+  this.type = "Настінний світильник";
+  this.type_of_bulb="GU10";
+  this.material = "Пластик";
+  this.light_color = 2700;
+  this.capacity= 60;
+  
+  number_of_lamps++;
+ };
+ public Lamp(String type,String type_of_bulb,String material,int light_color) {
+  this.type = type;
+  this.type_of_bulb= type_of_bulb;
+  this.material = material;
+  this.light_color = light_color;
+  this.capacity= 100;
+  
+  number_of_lamps++;
+ };
+ public Lamp(String type,String type_of_bulb,String material,int light_color, int capacity) {
+  this.type = type;
+  this.type_of_bulb= type_of_bulb;
+  this.material = material;
+  this.light_color = light_color;
+  this.capacity= capacity;
+  
+  number_of_lamps++;
+ };
+
+ public static void PrintStaticSum() {
+  System.out.println("Кількість ламп: " + number_of_lamps +" шт\n");
+ }
+ public static void PrintSum() {
+  System.out.println("Кількість ламп: " + number_of_lamps +" шт\n");
+ }
+ public void resetValues(String type,String type_of_bulb,String material,int light_color, int capacity) {
+  this.type = type;
+  this.type_of_bulb= type_of_bulb;
+  this.material = material;
+  this.light_color = light_color;
+  this.capacity= capacity;
+ };
+ public String toString() {
+  return "Тип світильника: " + type  +"\n"+"Тип патрону лампи: " + type_of_bulb +"\n"+"Матеріали: " + material +"\n"+"Колір світла: " + light_color+"\n"+"Потужність: " + capacity +"ВТ\n"; 
+ }
+ public static void main(String[] args) { 
+  Lamp Wall_lamp= new Lamp();
+  System.out.println(Wall_lamp.toString());
+  Lamp Torsher= new Lamp("Торшер","E27","Метал",4000);
+  System.out.println(Torsher.toString());
+  Lamp Chandelier= new Lamp("Люстра","E14","Скло, метал",3000,60);
+  System.out.println(Chandelier.toString());
+  Lamp.PrintStaticSum();
+  Lamp.PrintSum();
+ }
+
+}
